@@ -1,0 +1,145 @@
+<!-- Page Heading -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+      Panneau de configuration
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <i class="fa fa-dashboard"></i>  <a href=" ">Dashboard</a>
+      </li>
+      <li class="active">
+        <i class="fa fa-fw fa-wrench"></i> Panneau de Configuration
+
+      </li>
+
+    </ol>
+  </div>
+</div>
+<!-- /.row -->
+
+
+<div class=" show row hidden" id ="reservoir">
+  <div class="col-lg-12">
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <i class="fa fa-info-circle"></i>  <strong>Le reservoir d'eau est vide !</strong>
+    </div>
+  </div>
+</div>
+<!-- /.row -->
+
+
+
+
+
+<!-- /.row -->
+<!-- /.row -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-fw fa-desktop"></i> Gestion de l'éclairage</h3>
+      </div>
+      <div class="panel-body">
+        <div>
+          <table class="table table-bordered">
+            <tr>
+              <td>
+                <strong>Heure d'allumage :</strong>
+              </td><td>
+              <input type="text" class="form-control has-success" id="heure_jour" placeholder=" " onchange="maj_config('heure_jour')">
+            </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Heure d'extinction :</strong>
+              </td><td>
+              <input type="text" class="form-control" id="heure_nuit" placeholder=" " onchange="maj_config('heure_nuit')">
+            </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /.row -->
+
+
+<!-- /.row -->
+<div class="row ">
+  <div class="col-lg-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-fw fa-desktop"></i> Gestion de l'irrigation</h3>
+      </div>
+      <div  class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+          <tr id="arrosage_etat" class="active">
+            <td>
+              <strong> Irrigation automatique : </strong>
+            </td>
+            <td>
+              <label class="radio-inline" onchange="maj_config('arrosage_on')">
+                <input type="radio" name="inlineRadioOptions" id="arrosage_on" value="option2" onchange="maj_config('arrosage_on')"> On </label>
+              <label class="radio-inline" onchange="maj_config('arrosage_off')">
+                <input type="radio" name="inlineRadioOptions" id="arrosage_off" value="option1" onchange="maj_config('arrosage_off')"> Off</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>Heure d'arrosage du matin :</div>
+            </td><td>
+            <input type="text" class="form-control" id="arrosage_matin" placeholder=" " onchange="maj_config('arrosage_matin')">
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <div>Heure d'arrosage du soir :</div>
+            </td><td>
+            <input type="text" class="form-control" id="arrosage_soir" placeholder=" " onchange="maj_config('arrosage_soir')">
+
+          </td>
+
+          <tr>
+            <td>
+              <div  >Seuil d'humidité 1 (%) :</div>
+            </td><td>
+            <input type="text" class="form-control" id="seuil1" placeholder=" " onchange="maj_config('seuil1')">
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <div >Seuil d'humidité 2 (%) :</div>
+            </td><td>
+            <input type="text" class="form-control" id="seuil2" placeholder=" " onchange="maj_config('seuil2')">
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <div>Seuil d'humidité 3 (%) :</div>
+            </td><td>
+            <input type="text" class="form-control" id="seuil3" placeholder=" " onchange="maj_config('seuil3')">
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <div>Seuil d'humidité 4 (%) :</div>
+            </td><td>
+            <input type="text" class="form-control" id="seuil4" placeholder=" " onchange="maj_config('seuil4')">
+          </td>
+          </tr>
+        </table >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<button type="button" class="btn btn-outline btn-primary btn-lg btn-block" (click)="enregistrer()">Enregistrer</button>
+
+<div style="margin-top: 15px"></div>
