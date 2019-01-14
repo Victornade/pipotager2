@@ -12,12 +12,17 @@ import {SigninService} from './signin.service'
 export class SigninComponent implements OnInit {
 
   loginForm: FormGroup;
-  submitted = false;
+
+  submitted :boolean = false;
+  errorReturned: boolean =false;
+  errorMessage: string= '';
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private signinService : SigninService ) { }
+    private signinService : SigninService ) {
+
+  }
 
   ngOnInit() {
     if(localStorage.getItem('x-auth-token')){
@@ -26,7 +31,8 @@ export class SigninComponent implements OnInit {
 
     this.loginForm = this.formBuilder.group({
       login: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      remember: [false]
     });
 
   }
@@ -34,6 +40,7 @@ export class SigninComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.errorReturned=false;
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -45,8 +52,10 @@ export class SigninComponent implements OnInit {
       .subscribe(
         data=>{ this.router.navigate(['/dashboard']);},
         err=>{
-          //TODO err
-          console.log(err)});
+
+          this.errorReturned=true;
+          this.errorMessage=err.error.failed;
+        });
   }
 
 

@@ -4,7 +4,7 @@ import { HttpClientModule,HTTP_INTERCEPTORS  } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module'; //Pour le routage des liens
 import { AppComponent } from './app.component';
-import { FormsModule }   from '@angular/forms'; //Pour les formulaires
+import { FormsModule,ReactiveFormsModule  }   from '@angular/forms'; //Pour les formulaires
 
 import { ApiInterceptor} from './interceptor/httpconfig.interceptor';
 
@@ -36,7 +36,8 @@ import { SigninComponent } from './signin/signin.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [

@@ -12,9 +12,8 @@ export class DashboardComponent implements OnInit {
 
   lastAquisition={};
 
-  arrosageActivated=false;
-
-  reservoirEmpty=false;
+  arrosageActivated : boolean=false;
+  reservoirEmpty: boolean=false;
 
   constructor(
     private router: Router,
