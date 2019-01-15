@@ -29,17 +29,42 @@ export class DataController {
         Data.find({}, (err, data) => {
             if(err){
                 res.send(err);
+                return;
             }
-            res.json(data);
+            var toSend={
+                temperature: [],
+                humidite_air: [],
+                humidite_1: [],
+                humidite_2: [],
+                humidite_3: [],
+                humidite_4: [],
+                humidite_5: [],
+                humidite_6: [],
+                air: [],
+                pressure: [],
+                lumiere: [],
+            };
+
+
+            var temp = new Data();
+            for (var i=0; i<data.length; i++){
+                temp=new Data(data[i])
+                for (var j in toSend ){
+                    toSend[j].push({x: new Date(temp['date']).getTime(),y:temp[j] }) ;
+                }
+            }
+            //console.log(toSend)
+            res.json(toSend);
         });
     }
 
     public getLastAcquisition (req: Request, res: Response) {
-        Data.find().sort({"datetime": -1}).limit(1).exec({}, (err, data) => {
+
+        Data.find().sort({"date": -1}).limit(1).exec({}, (err, data) => {
             if(err){
                 res.send(err);
             }
-            res.json({temperature: 90});//data);
+            res.json(data[0]);
         });
     }
 

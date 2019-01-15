@@ -14,7 +14,8 @@ class App {
     public app: express.Application;
     public routeAuth: AuthRoutes = new AuthRoutes();
     public routeData: DataRoutes = new DataRoutes();
-    public mongoUrl: string = "mongodb://superadmin:mongo4ed%3B@192.168.1.12:27017/admin";
+    public mongoUrl: string = "mongodb://pipotager:mcs1aptesb1f@cluster0-shard-00-00-uzi15.mongodb.net:27017,cluster0-shard-00-01-uzi15.mongodb.net:27017,cluster0-shard-00-02-uzi15.mongodb.net:27017/pipotager?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
+        //"mongodb://superadmin:mongo4ed%3B@192.168.1.12:27017/admin";
 
 
     constructor() {

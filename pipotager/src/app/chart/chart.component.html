@@ -1,3 +1,126 @@
-<p >
-  chart works!
-</p>
+
+
+<!-- Page Heading -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+      Charts
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <i class="fa fa-dashboard"></i>  <a  [routerLink]="['/dashboard']">Dashboard</a>
+      </li>
+      <li class="active">
+        <i class="fa fa-bar-chart-o"></i> Graphiques
+      </li>
+    </ol>
+  </div>
+</div>
+<!-- /.row -->
+
+
+
+<div class=" row " *ngIf="reservoirEmpty && arrosageActivated">
+  <div class="col-lg-12">
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <i class="fa fa-info-circle"></i>  <strong>Le reservoir d'eau est vide !</strong>
+    </div>
+  </div>
+</div>
+<!-- /.row -->
+
+<div class="  row "  *ngIf=" !arrosageActivated">
+  <div class="col-lg-12">
+    <div class="alert alert-info alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <i class="fa fa-info-circle"></i>
+      <strong>Le dispositif d'arrosage automatique est désactivé ! 	</strong>
+      <button type="button" class="btn btn-info" Onclick="activer_arrosage()"> Activer </button>
+    </div>
+  </div>
+</div>
+
+<!-- Flot Charts -->
+<div class="row" id="intervalle">
+  <div class="col-lg-12">
+    <h2 class="page-header">Graphiques en temps réel</h2>
+  </div>
+</div>
+<!-- /.row -->
+
+
+
+
+<div class="navbar navbar-default" >
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> Intervalle d'étude</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li id="lifull"  class="active"><a href="#intervalle" id="full">Tout</a>
+        </li>
+        <li id="limonth" ><a href="#intervalle" id="month">Mois</a>
+        </li>
+        <li id="liweek"><a href="#intervalle" id="week">Semaine</a>
+        </li>
+        <li id="liday" ><a href="#intervalle" id="day">Jour</a>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>
+
+
+
+
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Données relatives à l'environnement</h3>
+      </div>
+      <div class="panel-body">
+        <div>
+          <!--div [chart]="chartEnvironment"></div-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /.row -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Données relatives à l'humidité de l'air et du sol</h3>
+      </div>
+      <div class="panel-body">
+
+        <div>
+          <highcharts-chart
+            [Highcharts]="moistureChart.Highcharts"
+            [constructorType]="moistureChart.chartConstructor"
+            [options]="moistureChart.chartOptions"
+            [(update)]="updatechart"
+            style="width: 100%; height: 400px; display: block;"
+          ></highcharts-chart>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /.row -->
+

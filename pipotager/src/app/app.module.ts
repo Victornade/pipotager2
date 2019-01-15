@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule,HTTP_INTERCEPTORS  } from '@angular/common/http'
+import { HighchartsChartModule } from 'highcharts-angular';
 
 import { AppRoutingModule } from './app-routing.module'; //Pour le routage des liens
 import { AppComponent } from './app.component';
 import { FormsModule,ReactiveFormsModule  }   from '@angular/forms'; //Pour les formulaires
+
+
 
 import { ApiInterceptor} from './interceptor/httpconfig.interceptor';
 
@@ -24,20 +27,21 @@ import { SigninComponent } from './signin/signin.component';
     AppComponent,
     HeaderComponent, FooterComponent,
     DashboardComponent,
-    ChartComponent,
     ConfigurationComponent,
     PresentationComponent,
     PhotosComponent,
     AproposComponent,
     BiographieComponent,
-    SigninComponent
+    SigninComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HighchartsChartModule
 
   ],
   providers: [

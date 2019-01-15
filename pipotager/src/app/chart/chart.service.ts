@@ -12,6 +12,6 @@ export class ChartService {
   constructor(private http: HttpClient) { }
 
   getAllData(){
-    return this.http.get(this.apiUrl+'allDatas')
+    return this.http.get(this.apiUrl+'data/')
   }
 }

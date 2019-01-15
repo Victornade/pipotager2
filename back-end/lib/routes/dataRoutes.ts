@@ -22,7 +22,6 @@ export class DataRoutes {
                         console.log(err)
                         return res.send(null);
                     }
-                    console.log(decoded)
                     return this.dataController.addNewData(req, res);
                 })
             })
@@ -44,10 +43,9 @@ export class DataRoutes {
             .get((req, res) => {
                 this.authController.checkAuthentification(req.headers['x-auth-token'], (err, decoded) => {
                     if (err) {
-                        console.log(err)
+                        console.log(err);
                         return res.send(null);
                     }
-                    console.log(decoded)
                     return this.dataController.getLastAcquisition(req, res);
                 })
             });
