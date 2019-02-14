@@ -32,7 +32,6 @@ export class DataRoutes {
                         console.log(err)
                         return res.send(null);
                     }
-                    console.log(decoded)
                     return this.dataController.getDatas(req, res);
                 })
 

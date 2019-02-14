@@ -8,12 +8,14 @@ import * as mongoose from "mongoose";
 //Routes perso
 import { AuthRoutes } from "./routes/authRoutes";
 import { DataRoutes } from "./routes/dataRoutes";
+import { CamRoutes } from "./routes/CamRoutes";
 
 class App {
 
     public app: express.Application;
     public routeAuth: AuthRoutes = new AuthRoutes();
     public routeData: DataRoutes = new DataRoutes();
+    public routeCam: CamRoutes = new CamRoutes();
     public mongoUrl: string = "mongodb://pipotager:mcs1aptesb1f@cluster0-shard-00-00-uzi15.mongodb.net:27017,cluster0-shard-00-01-uzi15.mongodb.net:27017,cluster0-shard-00-02-uzi15.mongodb.net:27017/pipotager?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
         //"mongodb://superadmin:mongo4ed%3B@192.168.1.12:27017/admin";
 
@@ -26,6 +28,7 @@ class App {
         this.config();
         this.routeAuth.routes(this.app);
         this.routeData.routes(this.app);
+        this.routeCam.routes(this.app);
 
     }
 
@@ -33,7 +36,7 @@ class App {
 
         this.app.use((req, res, next) => {
             res.setHeader('Access-Control-Allow-Origin', '*');
-            res.setHeader('Access-Control-Allow-Headers', '*')
+            res.setHeader('Access-Control-Allow-Headers', '*');
             res.setHeader('Access-Control-Allow-Methods', 'DELETE, PUT, POST, GET');
             next();
         });
