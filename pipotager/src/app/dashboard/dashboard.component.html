@@ -38,7 +38,7 @@
       <div class="panel-heading">
         <div class="row">
           <div class="col-xs-3">
-            <i class="fa fa-lightbulb-o fa-5x"></i>
+            <i class="fa fa-cloud-sun fa-5x"></i>
           </div>
           <div class="col-xs-9 text-right">
             <div class="huge" id="lum">{{lastAquisition.lux}}</div>
@@ -46,7 +46,7 @@
           </div>
         </div>
       </div>
-      <a style="cursor:pointer" (click)="goToChart()">
+      <a style="cursor:pointer" [routerLink]="['/charts']">
         <div class="panel-footer">
           <span class="pull-left">Plus de détails</span>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -68,7 +68,7 @@
           </div>
         </div>
       </div>
-      <a style="cursor:pointer" (click)="goToChart()">
+      <a style="cursor:pointer" [routerLink]="['/charts']">
         <div class="panel-footer">
           <span class="pull-left">Plus de détails</span>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -90,7 +90,7 @@
           </div>
         </div>
       </div>
-      <a style="cursor:pointer" (click)="goToChart()">
+      <a style="cursor:pointer" [routerLink]="['/charts']">
         <div class="panel-footer">
           <span class="pull-left">Plus de détails</span>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -112,7 +112,7 @@
           </div>
         </div>
       </div>
-      <a style="cursor:pointer" (click)="goToChart()">
+      <a style="cursor:pointer" [routerLink]="['/charts']">
         <div class="panel-footer">
           <span class="pull-left">Plus de détails</span>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -132,7 +132,7 @@
       <div class="panel-heading">
         <div class="row">
           <div class="col-xs-3">
-            <i class="fa fa-thermometer-three-quarters fa-5x"></i>
+            <i class="fa fa-thermometer-three-quarters fa-4x"></i>
           </div>
           <div class="col-xs-9 text-right">
             <div class="huge" id="temperature">{{lastAquisition.temperature}}</div>
@@ -140,7 +140,7 @@
           </div>
         </div>
       </div>
-      <a style="cursor:pointer" (click)="goToChart()">
+      <a style="cursor:pointer" [routerLink]="['/charts']">
         <div class="panel-footer">
           <span class="pull-left">Plus de détails</span>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -162,7 +162,7 @@
           </div>
         </div>
       </div>
-      <a style="cursor:pointer" (click)="goToChart()">
+      <a style="cursor:pointer" [routerLink]="['/charts']">
         <div class="panel-footer">
           <span class="pull-left">Plus de détails</span>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -184,7 +184,7 @@
           </div>
         </div>
       </div>
-      <a style="cursor:pointer" (click)="goToChart()">
+      <a style="cursor:pointer" [routerLink]="['/charts']">
         <div class="panel-footer">
           <span class="pull-left">Plus de détails</span>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -206,7 +206,102 @@
           </div>
         </div>
       </div>
-      <a style="cursor:pointer" (click)="goToChart()">
+      <a style="cursor:pointer" [routerLink]="['/charts']">
+        <div class="panel-footer">
+          <span class="pull-left">Plus de détails</span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /.row -->
+
+
+<!-- /.row -->
+
+<div class="row">
+  <div class="col-lg-3 col-md-6">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="fa fa-wind fa-5x"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge" id="temperature">{{lastAquisition.pm10}}</div>
+            <div>PM1 (ug/M3)</div>
+          </div>
+        </div>
+      </div>
+      <a style="cursor:pointer" [routerLink]="['/charts']">
+        <div class="panel-footer">
+          <span class="pull-left">Plus de détails</span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="fa fa-wind fa-5x"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge" id="humair">{{lastAquisition.pm25}}</div>
+            <div>PM2.5  (ug/m3)</div>
+          </div>
+        </div>
+      </div>
+      <a style="cursor:pointer" [routerLink]="['/charts']">
+        <div class="panel-footer">
+          <span class="pull-left">Plus de détails</span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="fa fa-wind fa-5x"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge" id="hum3">{{lastAquisition.pm100}}</div>
+            <div>PM10 (ug/M3)</div>
+          </div>
+        </div>
+      </div>
+      <a style="cursor:pointer" [routerLink]="['/charts']">
+        <div class="panel-footer">
+          <span class="pull-left">Plus de détails</span>
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="fa fa-wind fa-5x"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge" id="hum4">{{lastAquisition.air/10}}</div>
+            <div>Qualité de l'air (%)</div>
+          </div>
+        </div>
+      </div>
+      <a style="cursor:pointer" [routerLink]="['/charts']">
         <div class="panel-footer">
           <span class="pull-left">Plus de détails</span>
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

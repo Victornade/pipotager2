@@ -62,6 +62,7 @@ export class ChartComponent implements OnInit {
       Highcharts : Highcharts, // required
       chartConstructor :'chart', // optional string, defaults to 'chart'
       chartOptions: {
+        title:{text:''},
         chart :{zoomType: 'x'},
         xAxis: { type: 'datetime' },
         yAxis: [{title: {  text: 'humidité (%)'}},
@@ -79,15 +80,16 @@ export class ChartComponent implements OnInit {
       if(data[d].name.indexOf('pm') ==0 ) {
         series.push(data[d])
       }
-    }
+    };
     console.log(series)
     this.airChart={
       Highcharts : Highcharts, // required
       chartConstructor :'chart', // optional string, defaults to 'chart'
       chartOptions: {
+        title:{text:''},
         chart :{zoomType: 'x'},
         xAxis: { type: 'datetime' },
-        yAxis: [{title: {  text: 'ug/ppm'}},
+        yAxis: [{title: {  text: 'ug/ppm'}, min: 0, max : 300},
               ],
         series:series
       } // required
@@ -107,11 +109,12 @@ export class ChartComponent implements OnInit {
       Highcharts : Highcharts, // required
       chartConstructor :'chart', // optional string, defaults to 'chart'
       chartOptions: {
+        title:{text:''},
         chart :{zoomType: 'x'},
         xAxis: { type: 'datetime' },
-        yAxis: [{title: {  text: 'Lumière & humidité (%)'}},
-                {title: {  text: 'Température (°C)'}},
-                {title: {  text: 'Pression (hPa)'}, opposite:true }
+        yAxis: [{title: {  text: 'Lumière & humidité (%)'}, min : 0, max: 130},
+                {title: {  text: 'Température (°C)'}, min : 0, max : 30},
+                {title: {  text: 'Pression (hPa)'}, opposite:true, min : 900, max: 1030 }
                       ],
         series:series
       } // required
