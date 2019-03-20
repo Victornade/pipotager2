@@ -8,7 +8,7 @@ import * as mongoose from "mongoose";
 //Routes perso
 import { AuthRoutes } from "./routes/authRoutes";
 import { DataRoutes } from "./routes/dataRoutes";
-import { CamRoutes } from "./routes/CamRoutes";
+import { CamRoutes } from "./routes/camRoutes";
 
 class App {
 
